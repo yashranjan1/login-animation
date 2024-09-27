@@ -1,0 +1,17 @@
+/*Animation code for input fields*/
+
+fieldset label {
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease-in-out;
+}
+
+fieldset input[data-empty=false], fieldset input:valid, fieldset input:focus {
+    padding: 25px 6px 10px;
+}
+
+fieldset input[data-empty=false] + label, fieldset input:valid + label, fieldset input:focus + label {
+    color: #4d7c0f;
+    padding: 4px 0 4px 5px;
+    font-size: 12px;
+    transform: translate3d(0, -10px, 0);
+}

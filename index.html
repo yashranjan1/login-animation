@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./tailwind-styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="min-h-screen flex font-geistVF w-full p-5 gap-8">
+            <div class="min-h-full flex flex-col flex-1 gap-10">
+                <!-- Header -->
+                <div class="flex m-8">
+                    <div class="flex flex-1 gap-3 items-center">
+                        <img src="./assets/images/logo.svg" class="h-12"/>
+                        <div class="flex flex-col">
+                            <h1 class="font-medium text-xl">REGIONS</h1>
+                            <h1 class="text-lg">Mortage</h1>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <h1 class="text-gray-500">Are you a new customer?</h1>
+                        <button class="border border-gray-400 ms-3 px-5 py-2 rounded-3xl font-semibold text-lime-700">
+                            Enroll now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="flex flex-col flex-1 justify-center items-center gap-3">
+                    <h1 class="font-bold text-6xl">Welcome Back</h1>
+                    <h1 class="text-gray-500 text-lg font-light mb-2">Sign in to your Regions MyMortgage account.</h1>
+                    <form class="flex flex-col gap-5">
+                        <fieldset class="border-2 border-gray-300 h-14 w-[30rem] flex items-center px-2.5 py-2 rounded-lg relative">
+                            <input type="text" name="username" id="onlineIdField" class="h-9 focus:outline-none w-full" autocomplete="off" required />
+                            <label for="username" class="absolute">Online ID</label>
+                        </fieldset>
+                        <fieldset class="border-2 border-gray-300 h-14 w-[30rem] flex items-center px-2.5 py-2 rounded-lg relative">
+                            <input type="password" name="password" id="passwordField" class="h-9 focus:outline-none w-full" autocomplete="off" required />
+                            <label for="password" class="absolute">Password</label>
+                        </fieldset>
+                        <div class="flex gap-2">
+                            <input type="checkbox" name="remember" class="mt-1 accent-lime-700 h-4 w-4" />
+                            <label for="remember">Remember Me</label>
+                        </div>
+                        <button type="submit" class="bg-gray-300 text-white py-3 rounded-3xl" id="submitButton" disabled>Login</button>
+                        <div class="flex justify-center gap-5">
+                            <button class="text-lime-700 font-medium">Forgot Online ID?</button>
+                            <span class="material-icons text-[0.40rem] text-gray-500 mt-2">fiber_manual_record</span>
+                            <button class="text-lime-700 font-medium">Forgot Password?</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Footer -->
+                <div class="flex flex-col items-center gap-1 mb-2">
+                    <div class="flex flex-1 justify-center text-gray-500 font-light gap-4 text-sm">
+                        <span class="material-icons-outlined text-[1.17rem]">other_houses</span>
+                        <h1>Equal Housing Lender</h1>
+                        <span class="material-icons text-[0.40rem] mt-1.5">fiber_manual_record</span>
+                        <h1>Member FDIC</h1>
+                    </div>
+                    <div class="flex flex-1 justify-center text-gray-500 font-light text-sm gap-4">
+                        <div class="flex">
+                            <span class="material-icons-outlined text-[1.17rem] ">copyright</span>
+                            <h1>2023 Regions Financial Corporation. All Rights Reserved.</h1>
+                        </div>
+                        <span class="material-icons text-[0.40rem] mt-1.5">fiber_manual_record</span>
+                        <button class="text-lime-700">1(800) REGIONS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-house bg-cover bg-no-repeat min-h-full flex flex-1 rounded-3xl"></div>
+        </div>
+        <script src="validation.js"></script>
+        <!-- Hidden div to add the following attr while building tailwind -->
+        <div class="hidden bg-lime-700 hover:bg-lime-800" />
+    </body>
+</html>
