@@ -122,3 +122,14 @@ function toggleVisibility(hide, show) {
     hide.classList.add('hidden')
     show.classList.remove('hidden')
 }
+
+
+document.querySelector('#tooltip-button').addEventListener('mouseenter', () => {
+    document.querySelector('#tooltip').classList.add('flex')
+    document.querySelector('#tooltip').classList.remove('hidden')
+})
+
+document.querySelector('#tooltip-button').addEventListener('mouseleave', () => {
+    document.querySelector('#tooltip').classList.remove('flex')
+    document.querySelector('#tooltip').classList.add('hidden')
+})

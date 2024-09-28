@@ -30,11 +30,24 @@
                             <h1 class="text-lg">Mortgage</h1>
                         </div>
                     </div>
-                    <div class="flex items-center slide-down">
+                    <div class="flex items-center justify-end slide-down">
                         <h1 class="text-gray-500">Are you a new customer?</h1>
-                        <button class="border border-gray-400 ms-3 px-5 py-2 rounded-3xl font-semibold text-lime-700">
+
+                        <button id="tooltip-button" class="border border-gray-400 ms-3 px-5 py-2 rounded-3xl font-semibold text-lime-700">
                             Enroll now
                         </button>
+                        <div id="tooltip" class="absolute bg-slate-900 flex-col gap-3 top-14 right-1 text-white py-4 px-4 rounded-xl hidden">
+                            <div class="flex gap-1">
+                                <span class="material-icons-outlined text-2xl">check_circle</span><h1>Access your loans online</h1>
+                            </div>
+                            <div class="flex gap-1">
+                                <span class="material-icons-outlined text-2xl">check_circle</span><h1>Pay your mortgage online</h1>
+                            </div>
+                            <div class="flex gap-1">
+                                <span class="material-icons-outlined text-2xl">check_circle</span><h1>View your mortgage statements</h1>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 
@@ -91,5 +104,6 @@
         <script src="./validation.js"></script>
         <script src="./animations.js"></script>
         <!-- Hidden div to add the following attr while building tailwind -->
+        <div class="bg-lime-700 hover:bg-lime-800 hidden"></div>"
     </body>
 </html>
