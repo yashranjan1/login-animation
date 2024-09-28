@@ -2,6 +2,7 @@
 const onlineId = document.getElementById('onlineIdField');
 const password = document.getElementById('passwordField');
 const submitButton = document.getElementById('submitButton');
+const checkbox = document.querySelector('input[type="checkbox"]')
 
 function isValid() {
     const id = onlineId.value.trim();
@@ -16,6 +17,11 @@ function isValid() {
         submitButton.classList.remove('bg-lime-700', 'hover:bg-lime-800', 'cursor-pointer');
         submitButton.classList.add('bg-gray-300', 'cursor-not-allowed');
     }
+}
+
+function toggleRem() {
+    if (checkbox.checked) checkbox.checked = false
+    else checkbox.checked = true
 }
 
 onlineId.addEventListener('input', isValid);

@@ -7,18 +7,23 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <div class="min-h-screen flex font-geistVF w-full p-5 gap-8">
-            <div class="min-h-full flex flex-col flex-1 gap-10">
+        <div class="z-10 absolute min-w-full min-h-full flex">
+            <div id="lower-logo-container" class="flex-1">
+                <img id="lower-logo" src="./assets/images/logo.svg" class="relative h-12 mx-[3.75rem] my-[3.5rem]"/>
+            </div>
+        </div>
+        <div class="min-h-screen flex font-geistVF w-full p-5 gap-8" id="content-panel">
+            <div class="min-h-full flex flex-col flex-1 z-20 gap-10" id="form-panel">
                 <!-- Header -->
                 <div class="flex m-8">
                     <div class="flex flex-1 gap-3 items-center">
-                        <img src="./assets/images/logo.svg" class="h-12"/>
-                        <div class="flex flex-col">
+                        <img src="./assets/images/logo.svg" class="h-12 z-10 bg-white pl-2" id="mid-logo"/>
+                        <div class="flex flex-col slide-left relative z-0">
                             <h1 class="font-medium text-xl">REGIONS</h1>
-                            <h1 class="text-lg">Mortage</h1>
+                            <h1 class="text-lg">Mortgage</h1>
                         </div>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center slide-down">
                         <h1 class="text-gray-500">Are you a new customer?</h1>
                         <button class="border border-gray-400 ms-3 px-5 py-2 rounded-3xl font-semibold text-lime-700">
                             Enroll now
@@ -27,10 +32,10 @@
                 </div>
                 
                 <!-- Content -->
-                <div class="flex flex-col flex-1 justify-center items-center gap-3">
+                <div class="flex flex-col flex-1 justify-center items-center gap-3 slide-down">
                     <h1 class="font-bold text-6xl">Welcome Back</h1>
                     <h1 class="text-gray-500 text-lg font-light mb-2">Sign in to your Regions MyMortgage account.</h1>
-                    <form class="flex flex-col gap-5">
+                    <form class="flex flex-col gap-5" action="">
                         <fieldset class="border-2 border-gray-300 h-14 w-[30rem] flex items-center px-2.5 py-2 rounded-lg relative">
                             <input type="text" name="username" id="onlineIdField" class="h-9 focus:outline-none w-full" autocomplete="off" required />
                             <label for="username" class="absolute">Online ID</label>
@@ -41,18 +46,21 @@
                         </fieldset>
                         <div class="flex gap-2">
                             <input type="checkbox" name="remember" class="mt-1 accent-lime-700 h-4 w-4" />
-                            <label for="remember">Remember Me</label>
+                            <button type="button" onclick="toggleRem()">Remember Me</button>                        
                         </div>
-                        <button type="submit" class="bg-gray-300 text-white py-3 rounded-3xl" id="submitButton" disabled>Login</button>
-                        <div class="flex justify-center gap-5">
-                            <button class="text-lime-700 font-medium">Forgot Online ID?</button>
-                            <span class="material-icons text-[0.40rem] text-gray-500 mt-2">fiber_manual_record</span>
-                            <button class="text-lime-700 font-medium">Forgot Password?</button>
-                        </div>
+                        <button type="button" class="bg-gray-300 text-white py-3 rounded-3xl flex justify-center items-center" id="submitButton" disabled onclick="login()">
+                            <div class="h-5 w-5 my-0.5 border-[3px] border-[#ffffff55] border-t-white rounded-xl animate-spin hidden"></div>
+                            <h1 class="">Login</h1>
+                        </button>
                     </form>
+                    <div class="flex justify-center gap-5">
+                        <button class="text-lime-700 font-medium">Forgot Online ID?</button>
+                        <span class="material-icons text-[0.40rem] text-gray-500 mt-2">fiber_manual_record</span>
+                        <button class="text-lime-700 font-medium">Forgot Password?</button>
+                    </div>
                 </div>
                 <!-- Footer -->
-                <div class="flex flex-col items-center gap-1 mb-2">
+                <div class="flex flex-col items-center gap-1 mb-2 slide-down" id="fade-in">
                     <div class="flex flex-1 justify-center text-gray-500 font-light gap-4 text-sm">
                         <span class="material-icons-outlined text-[1.17rem]">other_houses</span>
                         <h1>Equal Housing Lender</h1>
@@ -69,9 +77,12 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-house bg-cover bg-no-repeat min-h-full flex flex-1 rounded-3xl"></div>
+            <div class="bg-house bg-cover bg-no-repeat min-h-full flex flex-1 rounded-3xl" id="image-panel">
+                <div id="image-hider" class="bg-transparent min-h-full min-w-full rounded-3xl"></div>
+            </div>
         </div>
-        <script src="validation.js"></script>
+        <script src="./validation.js"></script>
+        <script src="./animations.js"></script>
         <!-- Hidden div to add the following attr while building tailwind -->
         <div class="hidden bg-lime-700 hover:bg-lime-800" />
     </body>

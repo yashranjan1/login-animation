@@ -1,4 +1,4 @@
-/*Animation code for input fields*/
+/*Animation code for labels*/
 
 fieldset label {
     transform: translate3d(0, 0, 0);
@@ -14,4 +14,103 @@ fieldset input[data-empty=false] + label, fieldset input:valid + label, fieldset
     padding: 4px 0 4px 5px;
     font-size: 12px;
     transform: translate3d(0, -10px, 0);
+}
+
+/*Button scale on click*/
+@keyframes button-bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.98);
+    }
+}
+
+/* Class to add the scale effect */
+.scale {
+    animation: button-bounce 0.4s ease-in-out;
+}
+
+/*Transition Animations*/
+.slide-down {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+    transform: translate3d(0, -20px, 0);
+}
+
+.slide-down.hide{
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+.slide-left{
+    position: relative;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.slide-left.hide {
+    transform: translateX(-75%);
+    opacity: 0;
+}
+
+/*scale and hide image*/
+@keyframes hide-image {
+    0% {
+        box-shadow: 10px 10px white inset, -10px -10px white inset, -10px 10px white inset, 10px -10px white inset;
+    }
+    25% {
+        box-shadow: 0 0 white inset, 0 0 white inset, 0 0 white inset, 0 0 white inset;
+    }
+    50% {
+        box-shadow: 200px 200px white inset, -200px -200px white inset, -200px 200px white inset, 200px -200px white inset;
+    }
+    80% {
+        box-shadow: 500px 500px white inset, -500px -500px white inset, -500px 500px white inset, 500px -500px white inset;
+    }
+    100% {
+        box-shadow: 1000px 1000px white inset, -1000px -1000px white inset, -1000px 1000px white inset, 1000px -1000px white inset;
+    }
+}
+
+#image-hider {
+  box-shadow: 10px 10px white inset, -10px -10px white inset, -10px 10px white inset, 10px -10px white inset;
+}
+
+.hide-image {
+    animation: hide-image 1s linear forwards;
+}
+
+/*logo spin animation*/
+#lower-logo {
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transition: all 0.25s ease;
+}
+
+#lower-logo.spin-and-center{
+    top: 40%;
+    left: 50%;
+    transform: translate(-40%, -50%) rotate(720deg);
+    transition: all 1s ease;
+}
+
+@keyframes scale-down {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+.scale-down {
+    animation: scale-down 1s linear forwards;
+}
+
+#lower-logo-container{
+    transform-origin: center;
 }
