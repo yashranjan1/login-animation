@@ -12,7 +12,14 @@
                 <img id="lower-logo" src="./assets/images/logo.svg" class="relative h-12 mx-[3.75rem] my-[3.5rem]"/>
             </div>
         </div>
-        <div class="min-h-screen flex font-geistVF w-full p-5 gap-8" id="content-panel">
+        <div class="z-30 absolute min-w-full min-h-full hidden" id="upper-layer">
+            <div class="flex-1 flex">
+                <div id="upper-logo-container" class="pt-5 pb-7 px-4 h-24 bg-white relative rounded-[50%]" >
+                    <img id="upper-logo" src="./assets/images/logo.svg" class="h-12"/>
+                </div>
+            </div>
+        </div>
+        <div class="min-h-screen flex font-geistVF w-full p-5 gap-8 justify-end" id="content-panel">
             <div class="min-h-full flex flex-col flex-1 z-20 gap-10" id="form-panel">
                 <!-- Header -->
                 <div class="flex m-8">
@@ -77,13 +84,12 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-house bg-cover bg-no-repeat min-h-full flex flex-1 rounded-3xl" id="image-panel">
+            <div class="bg-house bg-cover bg-no-repeat min-h-full flex flex-1 rounded-3xl z-20" id="image-panel">
                 <div id="image-hider" class="bg-transparent min-h-full min-w-full rounded-3xl"></div>
             </div>
         </div>
         <script src="./validation.js"></script>
         <script src="./animations.js"></script>
         <!-- Hidden div to add the following attr while building tailwind -->
-        <div class="hidden bg-lime-700 hover:bg-lime-800" />
     </body>
 </html>

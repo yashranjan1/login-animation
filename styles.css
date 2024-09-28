@@ -80,6 +80,9 @@ fieldset input[data-empty=false] + label, fieldset input:valid + label, fieldset
     animation: hide-image 1s linear forwards;
 }
 
+.show-image {
+    animation: hide-image 1s linear reverse;
+}
 /*logo spin animation*/
 #lower-logo {
     top: 0;
@@ -89,8 +92,8 @@ fieldset input[data-empty=false] + label, fieldset input:valid + label, fieldset
 }
 
 #lower-logo.spin-and-center{
-    top: 40%;
-    left: 50%;
+    top: 44.1%;
+    left: 46.68%;
     transform: translate(-40%, -50%) rotate(720deg);
     transition: all 1s ease;
 }
@@ -98,9 +101,6 @@ fieldset input[data-empty=false] + label, fieldset input:valid + label, fieldset
 @keyframes scale-down {
     0% {
         transform: scale(1);
-    }
-    50% {
-        transform: scale(0.5);
     }
     100% {
         transform: scale(0);
@@ -112,5 +112,36 @@ fieldset input[data-empty=false] + label, fieldset input:valid + label, fieldset
 }
 
 #lower-logo-container{
+    transform-origin: center; 
+}
+
+#upper-logo-container.show {
+    animation: scale-down 0.3s linear reverse;
+}
+ 
+
+@keyframes scale-half-left {
+    0% {
+        transform: width: 100%;
+    }
+    100% {
+        transform: width: 50%;
+    }
+}
+
+#image-panel.shift {
+    flex: 0.5;
+}
+
+#upper-logo-container {
+    top: 47.8%;
+    left: 48.41%;
     transform-origin: center;
+}
+
+#upper-logo-container.spin-and-top-left{
+    top: -1.4%;
+    left: 0.2%;
+    transform: translate(40%, 50%) rotate(720deg);
+    transition: all 1s ease;
 }
